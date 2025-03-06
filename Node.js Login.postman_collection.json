@@ -1,0 +1,160 @@
+{
+	"info": {
+		"_postman_id": "b6468a87-03da-42f0-b8db-3ee1a9ef34ba",
+		"name": "Node.js Login",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24939218",
+		"_collection_link": "https://crimson-space-157588.postman.co/workspace/OfficialAyzenn~344749c6-25e7-40f1-886b-8b5fe575cca6/collection/24939218-b6468a87-03da-42f0-b8db-3ee1a9ef34ba?action=share&source=collection_link&creator=24939218"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "auth_user",
+					"item": [
+						{
+							"name": "userSingup",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"username\": \"babrali\",\r\n  \"password\": \"12345@dss\"  \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/auth/register",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"auth",
+										"register"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "login",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"username\": \"babrali\",\r\n  \"password\": \"12345@dss\"  \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/auth/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"auth",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "protectedRoute",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3YzljMGQ0MjM3MjZhZWVlODE2MjdlNiIsImlhdCI6MTc0MTI3NTY4NCwiZXhwIjoxNzQxMjc5Mjg0fQ.SJIrU7VDBKMyQLo1qCyHcme93D_Ufaq8L67bYjSZ5zc",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/auth/protected",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"auth",
+										"protected"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "profileUpdate",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"message\": \"Profile updated successfully\",\r\n  \"user\": {\r\n    \"_id\": \"6731a41e3f7545ae6bea6fd2\",\r\n    \"name\": \"John Doe\",\r\n    \"email\": \"johndoe@example.com\",\r\n    \"phone_number\": \"+1234567890\",\r\n    \"preferred_contact_method\": \"email\",\r\n    \"location\": \"New York, USA\",\r\n    \"isVerified\": true,\r\n    \"createdAt\": \"2021-04-15T06:32:03.213Z\",\r\n    \"updatedAt\": \"2021-04-15T07:12:15.123Z\"\r\n  }\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/auth/update",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"auth",
+										"update"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "/"
+		}
+	]
+}
